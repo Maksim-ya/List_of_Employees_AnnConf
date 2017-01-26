@@ -7,7 +7,7 @@
   <title>Maksim-ya</title>
 </head>
 <body>
-<h3>Maksim-ya presents</h3>
+<h3>Maksim-ya</h3>
 <br/>
 <a href="<c:url value="/employees"/>" target="_blank">List of Employees </a>
 <br/>
