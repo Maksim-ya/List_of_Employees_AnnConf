@@ -3,6 +3,7 @@ package maksim_ya.listofemployees.service;
 
 import maksim_ya.listofemployees.model.Employee;
 import maksim_ya.listofemployees.dao.EmployeeDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,8 +12,9 @@ import java.util.List;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-
+//    @Autowired
     private EmployeeDao employeeDao;
+    @Autowired
     public void setEmployeeDao(EmployeeDao employeeDao) {
         this.employeeDao = employeeDao;
     }

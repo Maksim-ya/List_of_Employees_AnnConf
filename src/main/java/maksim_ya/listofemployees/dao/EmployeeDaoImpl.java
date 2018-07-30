@@ -1,9 +1,11 @@
 package maksim_ya.listofemployees.dao;
+
 import maksim_ya.listofemployees.model.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,8 +15,10 @@ import java.util.List;
 public class EmployeeDaoImpl implements EmployeeDao {
     private static final Logger logger = LoggerFactory.getLogger(EmployeeDaoImpl.class);
 
+    //    @Autowired
     private SessionFactory sessionFactory;
 
+    @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
@@ -58,7 +62,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public List<Employee> listEmployees() {
         Session session = this.sessionFactory.getCurrentSession();
         List<Employee> employeeList = session.createQuery("from Employee").list();
-        for (Employee employee : employeeList){
+        for (Employee employee : employeeList) {
             logger.info("Employee list: " + employee);
         }
         return employeeList;

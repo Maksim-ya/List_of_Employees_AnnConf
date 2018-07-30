@@ -13,13 +13,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class EmployeeController {
+    @Autowired
     private EmployeeService employeeService;
 
-    @Autowired(required = true)
-    @Qualifier(value = "EmployeeService")
-    public void setEmployeeService(EmployeeService employeeService) {
-        this.employeeService = employeeService;
-    }
+//    @Autowired(required = true)
+//    @Qualifier(value = "EmployeeService")
+//    public void setEmployeeService(EmployeeService employeeService) {
+//        this.employeeService = employeeService;
+//    }
 
     @RequestMapping(value = "employees", method = RequestMethod.GET)
     public String listEmployees(Model model) {
